@@ -1,17 +1,115 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title> Recipes </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1></h1>
+  <main>
+    <div class="dropdown">
+      <span class="sign-in">Sign In</span>
+      <div class="dropdown-content">
+        <p>
+          <form id="sign-in">
+            <input type="email" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <button class="button">Sign in!</button>
+          </form>
+        </p>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <span class="sign-up">Sign Up</span>
+      <div class="dropdown-content">
+        <p>
+          <form id="sign-up">
+            <input type="email" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <button class="button">Sign up!</button>
+          </form>
+        </p>
+      </div>
+    </div>
+
+
+    <div class="dropdown">
+      <span class="add-recipe hidden">Add Recipe</span>
+      <div class="dropdown-content">
+        <p>
+          <form id="add-recipe">
+            <input type="name" name="name" placeholder="recipe name">
+            <input type="meal" name="meal" placeholder="meal">
+            <input type="cooking_time" name="meal" placeholder="cooking_time">
+            <input type="ingredients" name="ingredients" placeholder="ingredients">
+            <input type="instructions" name="instructions" placeholder="instructions">
+        </p>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Meals</button>
+      <div class="dropdown-content">
+        <a href="#">breakfast</a>
+        <a href="#">sides</a>
+        <a href="#">main course</a>
+        <a href="#">dessert</a>
+        <a href="#">vegetarian</a>
+        <a href="#">veggies</a>
+      </div>
+    </div>
+
+      <button class="button">Sign out!</button>
+  </main>
+
+  <div id="message"> </div>
+  <div class="grid"
+    data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 200 } }'>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+
+  </div>
+
+<h2>Filter</h2>
+<div id="filters" class="button-group">  <button class="button is-checked" data-filter="*">show all</button>
+  <button class="button" data-filter=".meal">meal</button>
+  <button class="button" data-filter=".cooking-time">cooking time</button>
+  <button class="button" data-filter=".vegetarian">vegetarian</button>
+  <button class="button" data-filter=".main-course">main course</button>
+</div>
+
+
+<div class="grid">
+  <div class="element-item transition metal " data-category="vegetarian">
+    <h3 class="meal">vegetarian</h3>
+    <p class="name">Pancakes</p>
+    <p class="cooking-time">30 min</p>
+  </div>
+  <div class="element-item metalloid " data-category="breakfast">
+    <h3 class="meal">breakfast</h3>
+    <p class="name">Waffles</p>
+    <p class="cooking-time">30 min</p>
+  </div>
+  <div class="element-item post-transition metal " data-category="main-course">
+    <h3 class="meal">main course</h3>
+    <p class="name">Steak</p>
+    <p class="cooking-time">30 min</p>
+  </div>
+
+<div class="gameboard">
+
+</body>
+
 </html>
