@@ -44,16 +44,11 @@ const changePassword = formData => {
 
 const addRecipe = formData => {
   return $.ajax({
-    url: config.apiUrl + '/add-recipe',
+    url: config.apiUrl + '/recipes',
     method: 'POST',
+    data: formData,
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data: {
-      'name': 'name',
-      'cooking_time': 'cooking_time',
-      'ingredients': 'ingredients',
-      'meal': 'meal'
     }
   })
 }
