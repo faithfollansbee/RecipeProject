@@ -53,6 +53,16 @@ const onAddRecipe = event => {
     .catch(ui.addRecipeFailure)
 }
 
+const onViewRecipes = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  console.log(formData)
+  api.viewData(formData)
+    .then(ui.viewRecipesSuccessful)
+    .catch(ui.viewRecipesFailure)
+}
+
 // const $grid = $('.grid').card({
 //   itemSelector: '.element-item',
 //   layoutMode: 'fitRows',
@@ -77,5 +87,6 @@ module.exports = {
   onSignIn,
   onSignOut,
   onChangePassword,
-  onAddRecipe
+  onAddRecipe,
+  onViewRecipes
 }

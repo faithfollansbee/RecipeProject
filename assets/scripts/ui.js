@@ -72,6 +72,15 @@ const addRecipeSuccessful = () => {
 const addRecipeFailure = () => {
   $('#message').text('didn\'t add recipe')
 }
+
+const viewRecipesSuccessful = () => {
+  $('#message').text('here are your recipes')
+}
+
+const viewRecipesFailure = () => {
+  $('#message').text('failed to see your recipes')
+}
+
 module.exports = {
   signUpSuccessful,
   signUpFailure,
@@ -82,5 +91,7 @@ module.exports = {
   changePasswordSuccessful,
   changePasswordFailure,
   addRecipeSuccessful,
-  addRecipeFailure
+  addRecipeFailure,
+  viewRecipesSuccessful,
+  viewRecipesFailure
 }
