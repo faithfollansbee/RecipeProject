@@ -6,12 +6,13 @@
 // require('./example')
 
 const events = require('./events')
+
 $(() => {
   $('#sign-up').on('submit', events.onSignUp)
   $('#sign-in').on('submit', events.onSignIn)
   $('#sign-out').on('click', events.onSignOut)
   $('#change-password').on('submit', events.onChangePassword)
-  $('#add-recipe').on('click', events.onAddRecipe)
+  $('#add-recipe').on('submit', events.onAddRecipe)
   // $('.grid').isotope({
   // // options...
   //   itemSelector: '.grid-item',

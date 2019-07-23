@@ -31,7 +31,7 @@
     </div>
 
     <div class="dropdown">
-      <span class="sign-up">Sign Up</span>
+      <span class="sign-up hidden">Sign Up</span>
       <div class="dropdown-content">
         <p>
           <form id="sign-up">
@@ -54,7 +54,8 @@
             <input type="meal" name="meal" placeholder="meal">
             <input type="cooking_time" name="meal" placeholder="cooking_time">
             <input type="ingredients" name="ingredients" placeholder="ingredients">
-            <input type="instructions" name="instructions" placeholder="instructions">
+            <button class="button">add recipe!</button>
+          </form>
         </p>
       </div>
     </div>
@@ -70,8 +71,31 @@
         <a href="#">veggies</a>
       </div>
     </div>
+    <div class="dropdown">
+      <span class="sign-out">Sign out</span>
+      <div class="dropdown-content">
+        <p>
+          <form id="sign-out">
+            <button class="button">Sign out!</button>
+          </form>
+        </p>
+      </div>
+    </div>
 
-      <button class="button">Sign out!</button>
+  <div class="dropdown">
+    <span class="change-password hidden">Change password</span>
+    <div class="dropdown-content">
+      <p>
+        <form id="change-password">
+        <input type="password" name="passwords[old]" placeholder="Old Password">
+              <input type="password" name="passwords[new]" placeholder="New Password">
+          <button class="button">change password!</button>
+      </form>
+      </p>
+    </div>
+  </div>
+
+
   </main>
 
   <div id="message"> </div>
@@ -86,25 +110,23 @@
 <div id="filters" class="button-group">  <button class="button is-checked" data-filter="*">show all</button>
   <button class="button" data-filter=".meal">meal</button>
   <button class="button" data-filter=".cooking-time">cooking time</button>
-  <button class="button" data-filter=".vegetarian">vegetarian</button>
-  <button class="button" data-filter=".main-course">main course</button>
 </div>
 
 
 <div class="grid">
   <div class="element-item transition metal " data-category="vegetarian">
-    <h3 class="meal">vegetarian</h3>
-    <p class="name">Pancakes</p>
+    <h3 class="meal">veg</h3>
+    <p class="name">A</p>
     <p class="cooking-time">30 min</p>
   </div>
   <div class="element-item metalloid " data-category="breakfast">
-    <h3 class="meal">breakfast</h3>
-    <p class="name">Waffles</p>
+    <h3 class="meal">breakf</h3>
+    <p class="name">B</p>
     <p class="cooking-time">30 min</p>
   </div>
   <div class="element-item post-transition metal " data-category="main-course">
     <h3 class="meal">main course</h3>
-    <p class="name">Steak</p>
+    <p class="name">C</p>
     <p class="cooking-time">30 min</p>
   </div>
 

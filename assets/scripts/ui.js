@@ -26,7 +26,6 @@ const signInSuccessful = responseData => {
   $('.add-recipe').show()
   $('.sign-out').show()
   $('.change-password').show()
-  $('#change-password').text()
   $('form').trigger('reset')
   console.log('sign in successful!')
 }
@@ -39,12 +38,11 @@ const signInFailure = responseData => {
 const signOutSuccessful = responseData => {
   $('#message').show()
   $('#message').text('You signed out!')
-  $('#change-password').hide()
-  $('#game-record').hide()
+  $('.change-password').hide()
   $('.sign-up').show()
   $('.sign-in').show()
-  $('#sign-out').hide()
-  $('.gameboard').hide()
+  $('.sign-out').hide()
+  $('.add-recipe').hide()
   hideMessaging()
   $('form').trigger('reset')
   store.user = null

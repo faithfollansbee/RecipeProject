@@ -45,7 +45,7 @@ const changePassword = formData => {
 const addRecipe = formData => {
   return $.ajax({
     url: config.apiUrl + '/add-recipe',
-    method: 'PATCH',
+    method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },

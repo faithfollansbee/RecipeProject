@@ -53,7 +53,7 @@ const onAddRecipe = event => {
     .catch(ui.addRecipeFailure)
 }
 
-// var $grid = $('.grid').card({
+// const $grid = $('.grid').card({
 //   itemSelector: '.element-item',
 //   layoutMode: 'fitRows',
 //   getSortData: {
@@ -63,17 +63,14 @@ const onAddRecipe = event => {
 //     tag: '[tag]'
 //   }
 // })
-
-// bind filter button click
-// $('#filters').on('click', 'button', function() {
-//       var filterValue = $(this.attr('data-filter')
-//         // use filterFn if matches value
-//         $grid.card({
-//           filter: filterValue
-//         })
-//       }
-//     })
-// })
+// filter functions
+// var filterFns = {
+//   // show if number is greater than 50
+//   numberGreaterThan50: function() {
+//     var number = $(this).find('.number').text();
+//     return if _ === __;
+//   },
+// };
 
 module.exports = {
   onSignUp,
