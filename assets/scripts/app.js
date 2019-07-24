@@ -14,7 +14,7 @@ $(() => {
   $('#change-password').on('submit', events.onChangePassword)
   $('#add-recipe').on('submit', events.onAddRecipe)
   $('.view-recipes').on('click', events.onViewRecipes)
-
+  events.addHandlers()
   //
   // $('.grid').isotope({
   // // options...

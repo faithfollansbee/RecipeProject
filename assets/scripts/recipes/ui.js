@@ -1,6 +1,23 @@
 const store = require('../store')
 
 const showRecipesTemplate = require('../templates/recipe-listing.handlebars')
+const updateRecipesTemplate = require('../templates/recipe-listing.handlebars')
+
+const getRecipesSuccess = (data) => {
+  console.log(data.recipes)
+  console.log(data)
+  console.log('getting them')
+
+  const showRecipesHtml = showRecipesTemplate({ recipes: data.recipes })
+  $('.content').html(showRecipesHtml)
+}
+
+const updateRecipeSuccess = (data) => {
+  console.log(data)
+  $('#message').text('updatedrecipe')
+  const updateRecipesHtml = updateRecipesTemplate({ recipes: data.recipes })
+  $('.content').html(updateRecipesHtml)
+}
 
 const hideMessaging = function () {
   setTimeout(function () {
@@ -76,25 +93,11 @@ const addRecipeFailure = () => {
   $('#message').text('didn\'t add recipe')
 }
 
-const viewRecipesFailure = () => {
-  $('#message').text('failed to see your recipes')
-}
-
-const viewRecipesSuccessful = (data) => {
-  $('#message').text('here are your recipes')
-  console.log(data)
-
-  const showRecipesHtml = showRecipesTemplate({ recipes: data.recipes })
-  $('.content').html(showRecipesHtml)
-}
-
 const deleteRecipeSuccessful = () => {
+  $('#message').text('deleted recipe')
 }
 const deleteRecipeFailure = () => {
-}
-const updateRecipeSuccessful = () => {
-}
-const updateRecipeFailure = () => {
+  $('#message').text('didn\'t delete recipe')
 }
 
 module.exports = {
@@ -110,8 +113,6 @@ module.exports = {
   addRecipeFailure,
   deleteRecipeSuccessful,
   deleteRecipeFailure,
-  viewRecipesSuccessful,
-  viewRecipesFailure,
-  updateRecipeSuccessful,
-  updateRecipeFailure
+  getRecipesSuccess,
+  updateRecipeSuccess
 }

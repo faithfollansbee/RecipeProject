@@ -23,8 +23,8 @@ const onSignIn = event => {
   api.signIn(formData)
     .then(ui.signInSuccessful)
     .catch(ui.signInFailure)
-    .then(api.viewRecipes)
-    .then(ui.viewRecipesSuccessful)
+  //  .then(api.viewRecipes)
+  //  .then(ui.viewRecipesSuccessful)
 }
 
 const onSignOut = event => {
@@ -55,6 +55,8 @@ const onAddRecipe = event => {
   api.addRecipe(formData)
     .then(ui.addRecipeSuccessful)
     .catch(ui.addRecipeFailure)
+    // .then(api.viewRecipes)
+    // .then(ui.viewRecipesSuccessful)
 }
 
 const onDeleteRecipe = event => {
@@ -68,25 +70,52 @@ const onDeleteRecipe = event => {
     .catch(ui.delteRecipeFailure)
 }
 
-const onViewRecipes = event => {
+// const onViewRecipes = event => {
+//   event.preventDefault()
+//   const form = event.target
+//   const formData = getFormFields(form)
+//   console.log(formData)
+//   api.viewRecipes(formData)
+//     .then(ui.viewRecipesSuccessful)
+//     .catch(ui.viewRecipesFailure)
+// }
+
+// const onUpdateRecipe = event => {
+//   event.preventDefault()
+//   const form = event.target
+//   const formData = getFormFields(form)
+//   api.updateRecipe(formData) // (formData, id)
+//     .then(ui.updateRecipeSuccessful)
+//     .then(ui.viewRecipes)
+//     .then(ui.viewRecipesSuccessful)
+//     .catch(ui.updateRecipeFailure)
+// }
+
+const onGetRecipes = (event) => {
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  console.log(formData)
-  api.viewRecipes(formData)
-    .then(ui.viewRecipesSuccessful)
-    .catch(ui.viewRecipesFailure)
+  console.log('here?')
+  api.getRecipes()
+    .then(ui.getRecipesSuccess)
+    .catch(ui.getRecipesFailure)
 }
 
-const onUpdateRecipe = event => {
+const addHandlers = () => {
+  $('#getRecipesButton').on('click', onGetRecipes)
+//  $('#clearBooksButton').on('click', onClearRecipes)
+//  $('body').on('click', '.delete-recipe', onDeleteRecipe)
+}
+
+const onUpdateRecipe = (event) => {
   event.preventDefault()
+  const id = $(event.target).data('id')
   const form = event.target
   const formData = getFormFields(form)
-  api.updateRecipe(formData) // (formData, id)
-    .then(ui.updateRecipeSuccessful)
-    .then(ui.viewRecipes)
-    .then(ui.viewRecipesSuccessful)
-    .catch(ui.updateRecipeFailure)
+  api.updateRecipe(id, formData)
+  api.getRecipes()
+    .then(() => {
+      onGetRecipes(event)
+    })
+    .catch(ui.failure)
 }
 
 module.exports = {
@@ -96,6 +125,7 @@ module.exports = {
   onChangePassword,
   onAddRecipe,
   onDeleteRecipe,
-  onViewRecipes,
-  onUpdateRecipe
+  onUpdateRecipe,
+  onGetRecipes,
+  addHandlers
 }
