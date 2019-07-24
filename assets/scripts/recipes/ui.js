@@ -1,5 +1,6 @@
-const store = require('./store')
-// const showRecipesTemplate = require('../templates/recipe-listing.handlebars')
+const store = require('../store')
+
+const showRecipesTemplate = require('../templates/recipe-listing.handlebars')
 
 const hideMessaging = function () {
   setTimeout(function () {
@@ -82,7 +83,11 @@ const viewRecipesFailure = () => {
 const viewRecipesSuccessful = (data) => {
   $('#message').text('here are your recipes')
   console.log(data)
+
+  const showRecipesHtml = showRecipesTemplate({ recipes: data.recipes })
+  $('.content').html(showRecipesHtml)
 }
+
 const deleteRecipeSuccessful = () => {
 }
 const deleteRecipeFailure = () => {
@@ -91,11 +96,6 @@ const updateRecipeSuccessful = () => {
 }
 const updateRecipeFailure = () => {
 }
-
-// const showRecipesHtml = showRecipesTemplate({ recipes: data.recipes })
-// 5. insert the HTML string onto the page using jQuery
-// use append or HTML
-// $('.content').html(showRecipesHtml)
 
 module.exports = {
   signUpSuccessful,

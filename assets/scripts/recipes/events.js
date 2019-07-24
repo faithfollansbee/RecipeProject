@@ -1,8 +1,10 @@
-const getFormFields = require('../../lib/get-form-fields')
+const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 // external js: isotope.pkgd.js
 // const store = require('./store')
+// <script src="scripts/templates/recipe-listing.handlebars"></script>
+// var template = document.getElementById("templateId").innerHTML
 
 const onSignUp = event => {
   event.preventDefault()
