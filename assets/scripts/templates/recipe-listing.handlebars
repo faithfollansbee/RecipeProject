@@ -1,0 +1,30 @@
+{{#each recipes as |recipe|}}
+  {{log recipe}}
+  <section data-id="{{recipe.id}}">
+    <h6>Name:</h6>
+    <h3>
+      {{limit recipe.name 15}}
+    </h2>
+
+    <h6>Meal:</h6>
+    <h3>
+      {{limit recipe.meal 15}}
+    </h2>
+
+    <h6>Cooking Time:</h6>
+    <h3>
+      {{limit recipe.cooking_time 15}}
+    </h2>
+
+    <h6>Ingredients:</h6>
+    <h3>
+      {{limit recipe.ingredients 15}}
+    </h2>
+     {{> partial}}
+     <button class="btn btn-warning update-recipe" data-id="{{recipe.id}}">Update Recipe</button>
+
+    <button class="btn btn-danger delete-recipe" data-id="{{recipe.id}}"> Delete Recipe </button>
+
+  </section>
+
+{{/each}}

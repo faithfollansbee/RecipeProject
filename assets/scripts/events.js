@@ -21,6 +21,8 @@ const onSignIn = event => {
   api.signIn(formData)
     .then(ui.signInSuccessful)
     .catch(ui.signInFailure)
+    .then(api.viewRecipes)
+    .then(ui.viewRecipesSuccessful)
 }
 
 const onSignOut = event => {
@@ -53,34 +55,37 @@ const onAddRecipe = event => {
     .catch(ui.addRecipeFailure)
 }
 
+const onDeleteRecipe = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.deleteRecipe(formData) // (id)
+    .then(ui.deleteRecipeSuccessful)
+    .then(ui.viewRecipes)
+    .then(ui.viewRecipesSuccessful)
+    .catch(ui.delteRecipeFailure)
+}
+
 const onViewRecipes = event => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
   console.log(formData)
-  api.viewData(formData)
+  api.viewRecipes(formData)
     .then(ui.viewRecipesSuccessful)
     .catch(ui.viewRecipesFailure)
 }
 
-// const $grid = $('.grid').card({
-//   itemSelector: '.element-item',
-//   layoutMode: 'fitRows',
-//   getSortData: {
-//     name: '.name',
-//     meal: '.meal',
-//     time: '.cooking-time',
-//     tag: '[tag]'
-//   }
-// })
-// filter functions
-// var filterFns = {
-//   // show if number is greater than 50
-//   numberGreaterThan50: function() {
-//     var number = $(this).find('.number').text();
-//     return if _ === __;
-//   },
-// };
+const onUpdateRecipe = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.updateRecipe(formData) // (formData, id)
+    .then(ui.updateRecipeSuccessful)
+    .then(ui.viewRecipes)
+    .then(ui.viewRecipesSuccessful)
+    .catch(ui.updateRecipeFailure)
+}
 
 module.exports = {
   onSignUp,
@@ -88,5 +93,7 @@ module.exports = {
   onSignOut,
   onChangePassword,
   onAddRecipe,
-  onViewRecipes
+  onDeleteRecipe,
+  onViewRecipes,
+  onUpdateRecipe
 }
