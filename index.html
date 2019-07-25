@@ -15,6 +15,8 @@
   <script id="recipe-listing.handlebars" type="text/x-handlebars-template">-->
 
   <!-- </script> -->
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
@@ -36,7 +38,7 @@
     </div>
 
     <div class="dropdown">
-      <span class="sign-up hidden">Sign Up</span>
+      <span class="sign-up">Sign Up</span>
       <div class="dropdown-content">
         <p>
           <form id="sign-up">
@@ -51,7 +53,7 @@
 
 
     <div class="dropdown">
-      <span class="add-recipe hidden">Add Recipe</span>
+      <span class="add-recipe hidden" style="display: none">Add Recipe</span>
       <div class="dropdown-content">
         <p>
           <form id="add-recipe">
@@ -59,25 +61,29 @@
             <input type="text" name="recipe[meal]" placeholder="meal">
             <input type="text" name="recipe[cooking_time]" placeholder="cooking_time">
             <input type="text" name="recipe[ingredients]" placeholder="ingredients">
-            <button class="button">add recipe!</button>
+            <button class="button">add recipe! </button>
           </form>
         </p>
       </div>
     </div>
 
-    <div class="dropdown">
-      <button class="dropbtn view-recipes">Filter</button>
+    <div id="filters" class="button-group dropdown">
+      <button class="button is-checked dropbtn view-recipes" data-filter="*"" style="display: none">Filter</button>
       <div class="dropdown-content">
-        <a href="#">breakfast</a>
+        <a href="#" class="breakfast">breakfast</a>
         <a href="#">sides</a>
         <a href="#">main course</a>
         <a href="#">dessert</a>
         <a href="#">vegetarian</a>
         <a href="#">veggies</a>
+        <button class="button" data-filter=".breakfast">breakfast</button>
+        <button class="button" data-filter=".vegetarian">vegetarian</button>
+        <button class="button" data-filter=".main-course">main-course</button>
       </div>
     </div>
+
     <div class="dropdown">
-      <span class="sign-out">Sign out</span>
+      <span class="sign-out" style="display: none">Sign out</span>
       <div class="dropdown-content">
         <p>
           <form id="sign-out">
@@ -88,7 +94,7 @@
     </div>
 
   <div class="dropdown">
-    <span class="change-password hidden">Change password</span>
+    <span class="change-password"style="display: none">Change password</span>
     <div class="dropdown-content">
       <p>
         <form id="change-password">
@@ -99,23 +105,40 @@
       </p>
     </div>
   </div>
+  <button id="getRecipesButton" class="btn btn-info mr-2 hidden"> Get Recipes</button>
+
 
 </nav>
 
   <div id="message"> </div>
-  <div class="grid"
-    data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 200 } }'>
-    <div class="grid-item"></div>
-    <div class="grid-item"></div>
 
+
+<div class="flex-container content grid" id="content">
+
+
+  <div class="element-item breakfast" data-category="breakfast">
+    <h3 class="name">Pancakes</h3>
+    <p class="cooking-time">30 min</p>
+    <p class="ingredients">flour butter eggs milk</p>
   </div>
 
-  <button id="getRecipesButton" class="btn btn-info mr-2"> Get Recipes</button>
-
-
-  <div class="flex-container">
-  <div id="content" class="content"> </div>
+   <div class="element-item vegetarian" data-category="vegetarian">
+    <h3 class="name">eggplant parm</h3>
+    <p class="cooking-time">60 min</p>
+    <p class="ingredients">eggplant, breadcrumbs, sauce</p>
   </div>
+
+  <div class="element-item main-course" data-category="main-course">
+    <h3 class="name">Lasagna</h3>
+    <p class="cooking-time">90 min</p>
+    <p class="ingredients">pasta, sauce, ground beef</p>
+  </div>
+
+</div>
+
+
+</div>
+
 
 </body>
 

@@ -63,11 +63,22 @@ const getRecipes = function () {
   })
 }
 
+const deleteRecipe = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/recipes/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
   addRecipe,
-  getRecipes
+  getRecipes,
+  deleteRecipe
 }

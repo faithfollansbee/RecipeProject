@@ -3,11 +3,22 @@ const api = require('./api')
 const ui = require('./ui')
 // external js: isotope.pkgd.js
 // const store = require('./store')
-// <script src="scripts/templates/recipe-listing.handlebars"></script>
-// var template = document.getElementById("templateId").innerHTML
+
+// external js: isotope.pkgd.js
+
+// init Isotope
+// const $grid = $('.grid').isotope({
+//   itemSelector: '.element-item',
+//   layoutMode: 'fitRows',
+//   getSortData: {
+//     name: '.name',
+//     meal: '.meal',
+//     cooking_time: '.cooking-time',
+//     category: '[data-category]'
+//   }
+// })
 
 const onSignUp = event => {
-  event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
   console.log(formData)
@@ -59,26 +70,26 @@ const onAddRecipe = event => {
     // .then(ui.viewRecipesSuccessful)
 }
 
-const onDeleteRecipe = event => {
+const onDeleteRecipe = (event) => {
+  // const id = $(event.target).data('id')
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  api.deleteRecipe(formData) // (id)
-    .then(ui.deleteRecipeSuccessful)
-    .then(ui.viewRecipes)
-    .then(ui.viewRecipesSuccessful)
-    .catch(ui.delteRecipeFailure)
+  console.log('clicked to delete')
+  // const form = event.target
+  // const formData = getFormFields(form)
+  const recipeId = $(event.target).closest('section').data('id')
+  api.deleteRecipe(recipeId)
+    .then(() => onGetRecipes(event))
+    .catch(ui.failure)
+  // api.deleteRecipe(id) // (id)
+    // .then(ui.deleteRecipeSuccessful)
+    // .then(ui.viewRecipes)
+    // .then(ui.viewRecipesSuccessful)
+    // .catch(ui.delteRecipeFailure)
+    // .then(() => {
+    //  onGetRecipes(event)
+    // })
+    // .catch(ui.failure)
 }
-
-// const onViewRecipes = event => {
-//   event.preventDefault()
-//   const form = event.target
-//   const formData = getFormFields(form)
-//   console.log(formData)
-//   api.viewRecipes(formData)
-//     .then(ui.viewRecipesSuccessful)
-//     .catch(ui.viewRecipesFailure)
-// }
 
 // const onUpdateRecipe = event => {
 //   event.preventDefault()
@@ -101,8 +112,13 @@ const onGetRecipes = (event) => {
 
 const addHandlers = () => {
   $('#getRecipesButton').on('click', onGetRecipes)
-//  $('#clearBooksButton').on('click', onClearRecipes)
-//  $('body').on('click', '.delete-recipe', onDeleteRecipe)
+  // $('#delete-recipe').on('click', onDeleteRecipe)
+  //  $('#clearBooksButton').on('click', onClearRecipes)
+  //  $('body').on('click', '.delete-recipe', onDeleteRecipe)
+
+  // $("#albums-display").on("click", ".btn-danger", onDeleteRecipe)
+  // }
+  $('.content').on('click', '.delete-recipe', onDeleteRecipe)
 }
 
 const onUpdateRecipe = (event) => {

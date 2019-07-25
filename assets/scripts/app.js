@@ -13,8 +13,10 @@ $(() => {
   $('#sign-out').on('click', events.onSignOut)
   $('#change-password').on('submit', events.onChangePassword)
   $('#add-recipe').on('submit', events.onAddRecipe)
-  $('.view-recipes').on('click', events.onViewRecipes)
+  // $('.view-recipes').on('click', events.onViewRecipes)
+  $('.delete-book').on('click', events.onDeleteRecipe)
   events.addHandlers()
+  // $('.breakfast').on('click', events.)
   //
   // $('.grid').isotope({
   // // options...

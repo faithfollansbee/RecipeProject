@@ -44,6 +44,7 @@ const signInSuccessful = responseData => {
   $('.sign-up').hide()
   $('.sign-in').hide()
   $('.add-recipe').show()
+  $('.view-recipes').show()
   $('.sign-out').show()
   $('.change-password').show()
   $('form').trigger('reset')
@@ -62,6 +63,7 @@ const signOutSuccessful = responseData => {
   $('.sign-up').show()
   $('.sign-in').show()
   $('.sign-out').hide()
+  $('.view-recipes').hide()
   $('.add-recipe').hide()
   hideMessaging()
   $('form').trigger('reset')
@@ -76,7 +78,7 @@ const signOutFailure = () => {
 const changePasswordSuccessful = responseData => {
   $('#message').text('You changed password successfully!')
   // store.user = responseData.user
-  $('#sign-up').hide()
+  // $('#sign-up').hide()
   $('form').trigger('reset')
 }
 
