@@ -16,14 +16,4 @@ $(() => {
   // $('.view-recipes').on('click', events.onViewRecipes)
   $('.delete-book').on('click', events.onDeleteRecipe)
   events.addHandlers()
-  // $('.breakfast').on('click', events.)
-  //
-  // $('.grid').isotope({
-  // // options...
-  //   itemSelector: '.grid-item',
-  //   masonry: {
-  //     columnWidth: 200
-  //   }
-  // })
-  // your JS code goes here
 })

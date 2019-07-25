@@ -3,6 +3,37 @@ const store = require('../store')
 const showRecipesTemplate = require('../templates/recipe-listing.handlebars')
 const updateRecipesTemplate = require('../templates/recipe-listing.handlebars')
 
+const jQueryBridget = require('jquery-bridget')
+const Isotope = require('isotope-layout')
+// make Isotope a jQuery plugin
+jQueryBridget('isotope', Isotope, $)
+
+const $grid = $('.grid').isotope({
+  itemSelector: '.element-item',
+  layoutMode: 'fitRows',
+  getSortData: {
+    name: '.name',
+    meal: '.meal',
+    cookingt_time: '.cooking-time',
+    category: '[data-category]'
+  }
+})
+
+$('#filters').on('click', 'button', function () {
+  const filterValue = $(this).attr('data-filter')
+  // use filterFn if matches value
+  // filterValue = filterValue;
+  $grid.isotope({ filter: filterValue })
+})
+
+$('.button-group').each(function (i, buttonGroup) {
+  const $buttonGroup = $(buttonGroup)
+  $buttonGroup.on('click', 'button', function () {
+    $buttonGroup.find('.is-checked').removeClass('is-checked')
+    $(this).addClass('is-checked')
+  })
+})
+
 const getRecipesSuccess = (data) => {
   console.log(data.recipes)
   console.log(data)

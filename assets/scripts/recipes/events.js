@@ -1,22 +1,6 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-// external js: isotope.pkgd.js
-// const store = require('./store')
-
-// external js: isotope.pkgd.js
-
-// init Isotope
-// const $grid = $('.grid').isotope({
-//   itemSelector: '.element-item',
-//   layoutMode: 'fitRows',
-//   getSortData: {
-//     name: '.name',
-//     meal: '.meal',
-//     cooking_time: '.cooking-time',
-//     category: '[data-category]'
-//   }
-// })
 
 const onSignUp = event => {
   const form = event.target
