@@ -73,6 +73,18 @@ const deleteRecipe = function (id) {
   })
 }
 
+const updateRecipe = function (formData, id) {
+  console.log('updating?')
+  return $.ajax({
+    url: config.apiUrl + '/recipes/' + id,
+    method: 'PATCH',
+    data: formData,
+    headers: {
+      Authorization: 'Token token=' + store.user.Token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -80,5 +92,6 @@ module.exports = {
   changePassword,
   addRecipe,
   getRecipes,
-  deleteRecipe
+  deleteRecipe,
+  updateRecipe
 }

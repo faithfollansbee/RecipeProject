@@ -103,19 +103,16 @@ const addHandlers = () => {
   // $("#albums-display").on("click", ".btn-danger", onDeleteRecipe)
   // }
   $('.content').on('click', '.delete-recipe', onDeleteRecipe)
+  $('.content').on('submit', '.update-recipe', onUpdateRecipe)
 }
 
 const onUpdateRecipe = (event) => {
   event.preventDefault()
-  const id = $(event.target).data('id')
-  const form = event.target
-  const formData = getFormFields(form)
-  api.updateRecipe(id, formData)
+  const id = $(event.target).closest('section').data('id')
+  const formData = getFormFields(event.target)
+  api.updateRecipe(formData, id)
   api.getRecipes()
-    .then(() => {
-      onGetRecipes(event)
-    })
-    .catch(ui.failure)
+    .then(ui.updateRecipeSuccess)
 }
 
 module.exports = {

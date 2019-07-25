@@ -70,16 +70,15 @@
     <div id="filters" class="button-group dropdown">
       <button class="button is-checked dropbtn view-recipes" data-filter="*" style="display: none"> Filter </button>
       <div class="dropdown-content">
-        <a href="#" class="breakfast">breakfast</a>
-        <a href="#">sides</a>
-        <a href="#">main course</a>
+
+        <a href="#" class="breakfast" data-filter=".Breakfast">breakfast</a>
+
+        <a href="#" data-filter=".Lunch">lunch</a>
+        <a href="#" data-filter=".vegetarian">vegetarian</a>
         <a href="#">dessert</a>
         <a href="#">vegetarian</a>
 
-        <a href="#"> <button class="button" data-filter=".breakfast"> breakfast </button></a>
 
-        <button class="button" data-filter=".vegetarian">vegetarian</button>
-        <button class="button" data-filter=".main-course">main-course</button>
       </div>
     </div>
 
@@ -107,6 +106,7 @@
     </div>
   </div>
   <button id="getRecipesButton" class="btn btn-info mr-2 hidden"> Get Recipes</button>
+
 
 
 </nav>

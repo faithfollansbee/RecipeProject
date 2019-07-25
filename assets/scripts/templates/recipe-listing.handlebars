@@ -1,15 +1,16 @@
 {{#each recipes as |recipe|}}
   {{log recipe}}
-  <section data-id="{{recipe.id}}" data-category="vegetarian" class="element-item vegetarian">
+  <section data-id="{{recipe.id}}" data-category="vegetarian" class="element-item {{recipe.meal}} ">
     <h6><p class="name">Name:</p></h6>
     <h3>
       {{recipe.name}}
     </h2>
 
-    <h6>Meal:</h6>
+    <h6><p class="meal">Meal:</p></h6>
     <h3>
       {{recipe.meal}}
     </h2>
+
 
     <h6><p class="cooking-time">Cooking Time:</p></h6>
     <h3>
@@ -25,8 +26,15 @@
 
       </div>
 
+      <form class="update-recipe">
+        <input type="text" name="recipe[name]" placeholder="recipe name"/>
+        <input type="text" name="recipe[meal]" placeholder="meal"/>
+        <input type="text" name="recipe[cooking_time]" placeholder="cooking_time"/>
+        <input type="text" name="recipe[ingredients]" placeholder="ingredients"/>
+        <button type="submit" data-id="{{recipe.id}}" class="btn btn-info update-recipe">update</button>
+      </form>
 
-    <!--<button class="btn btn-warning update-recipe" data-id="{{recipe.id}}"> Update Recipe</button>-->
+
     <button id="delete-recipe" type="click" class="btn btn-danger delete-recipe">Remove</button>
     <!-- <button class="btn btn-danger delete-recipe" data-id="{{recipe.id}}"> Delete Recipe </button>-->
 

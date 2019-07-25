@@ -15,5 +15,6 @@ $(() => {
   $('#add-recipe').on('submit', events.onAddRecipe)
   // $('.view-recipes').on('click', events.onViewRecipes)
   $('.delete-book').on('click', events.onDeleteRecipe)
+  // $('.update-book').on('submit', events.onUpdateRecipe)
   events.addHandlers()
 })

@@ -1,7 +1,7 @@
 const store = require('../store')
 
 const showRecipesTemplate = require('../templates/recipe-listing.handlebars')
-const updateRecipesTemplate = require('../templates/recipe-listing.handlebars')
+// const updateRecipesTemplate = require('../templates/recipe-listing.handlebars')
 
 const jQueryBridget = require('jquery-bridget')
 const Isotope = require('isotope-layout')
@@ -22,7 +22,6 @@ const $grid = $('.grid').isotope({
 $('#filters').on('click', 'button', function () {
   const filterValue = $(this).attr('data-filter')
   // use filterFn if matches value
-  // filterValue = filterValue;
   $grid.isotope({ filter: filterValue })
 })
 
@@ -46,8 +45,8 @@ const getRecipesSuccess = (data) => {
 const updateRecipeSuccess = (data) => {
   console.log(data)
   $('#message').text('updatedrecipe')
-  const updateRecipesHtml = updateRecipesTemplate({ recipes: data.recipes })
-  $('.content').html(updateRecipesHtml)
+  // const updateRecipesHtml = updateRecipesTemplate({ recipes: data.recipes })
+  // $('.content').html(updateRecipesHtml)
 }
 
 const hideMessaging = function () {
