@@ -8,21 +8,21 @@ const Isotope = require('isotope-layout')
 // make Isotope a jQuery plugin
 jQueryBridget('isotope', Isotope, $)
 
-const $grid = $('.grid').isotope({
-  itemSelector: '.element-item',
-  layoutMode: 'fitRows',
-  getSortData: {
-    name: '.name',
-    meal: '.meal',
-    cookingt_time: '.cooking-time',
-    category: '[data-category]'
-  }
-})
+// const $grid = $('.grid').isotope({
+//   //itemSelector: '.element-item',
+//   layoutMode: 'fitRows'
+//   // getSortData: {
+//   //  name: '.name',
+//   //  meal: '.meal',
+//   //  cookingt_time: '.cooking-time',
+//   //  category: '[data-category]'
+//   // }
+// })
 
 $('#filters').on('click', 'button', function () {
   const filterValue = $(this).attr('data-filter')
   // use filterFn if matches value
-  $grid.isotope({ filter: filterValue })
+  $('.grid').isotope({ filter: filterValue })
 })
 
 $('.button-group').each(function (i, buttonGroup) {

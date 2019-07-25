@@ -80,7 +80,7 @@ const updateRecipe = function (formData, id) {
     method: 'PATCH',
     data: formData,
     headers: {
-      Authorization: 'Token token=' + store.user.Token
+      Authorization: 'Token token=' + store.user.token
     }
   })
 }
