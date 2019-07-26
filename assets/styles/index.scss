@@ -5,21 +5,20 @@
   font-size: 12px;
   position: relative;
   float: left;
-  width: 265px;
-  height: 290px;
+  width: 250px;
+  height: 270px;
   margin: 10px;
   padding: 10px;
   background: #888;
   color: #262524;
   overflow: scroll;
-
   font-family: 'Roboto', sans-serif;
 }
 
 .grid-item .cooking-time {
 font-size: 12px;
-
 }
+
 .grid-item > * {
   margin: 0;
   padding: 0;
@@ -37,40 +36,35 @@ font-size: 12px;
 
 .view-recipes {
   background-color: inherit;
-
   font-family: 'Roboto', sans-serif;
 }
+
 .button {
   flex-direction: column;
   flex-direction: row;
   background-color: white;
   color: black;
-  padding: 16px;
+  padding: 14px;
   font-size: 13px;
   border: none;
   font-family: 'Roboto', sans-serif;
-  display: inline-block;
- // background: #EEE;
-
+  display: block;
  border-radius: 7px;
- // background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
- // color: #222;
  font-family: sans-serif;
  font-size: 14px;
  text-shadow: 0 1px white;
  cursor: pointer;
 }
+
 #delete-recipe {
   background-color: white;
   color: black;
-
   font-family: 'Roboto', sans-serif;
 }
 
 .updateRecipe {
   background-color: white;
   color: black;
-
   font-family: 'Roboto', sans-serif;
 }
 
@@ -82,22 +76,19 @@ font-size: 12px;
   padding: 16px;
   font-size: 13px;
   border: none;
-
   font-family: 'Roboto', sans-serif;
 }
 
 .button:hover {
-  // background-color: #8CF;
   text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
   color: #222;
-  // background-color: #8CF;
   text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
-  // color: #222;
 }
  .button-group {
   margin-bottom: 20px;
   background-color: inherit;
   font-family: 'Roboto', sans-serif;
+  display: block;
 }
 
 .button-group:after {
@@ -135,28 +126,29 @@ font-size: 12px;
   font-size: 16px;
   border: none;
   cursor: pointer;
-
   font-family: 'Roboto', sans-serif;
 }
 
 .dropdown-content {
-
 vertical-align: middle;
 display: none;
- position: absolute;
+  position: absolute;
  background-color: #f9f9f9;
  min-width: 160px;
  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
  padding: 12px 16px;
  z-index: 1;
-
  font-family: 'Roboto', sans-serif;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .dropdown-content a:hover {background-color: #f1f1f1}
 
 .dropdown:hover .dropbtn {
-//  background-color: #3e8e41;
+  display: block;
 }
 
 body {
@@ -164,19 +156,22 @@ background: #FFFFED;
 background-color: #FFFFED;
  min-height: 80vh;
  padding: 5rem 0 1rem;
- // text-align: center;
 justify-content: space-evenly;
- // align-items: center;
 font-family: sans-serif;
-
 font-family: 'Roboto', sans-serif;
 }
 
 h1 {
 background: #FBF2EB;
 }
+h3 {
+  font-size: 20px;
+}
+h5 {
+  font-size: 12px;
+}
 h6 {
-  font-size: 10px;
+  font-size: 9px;
 }
 nav {
   margin: auto;
@@ -185,12 +180,9 @@ nav {
   display: flex;
   margin: 0 auto;
   text-align: center;
-  // justify-content: space-evenly;
   justify-content: space-around;
   align-items: center;
-  // border: 1px solid;
   cursor: pointer;
-  // margin: -1px;
   outline: none;
   padding: 1.5rem 0;
   top: 50%;
@@ -198,23 +190,22 @@ nav {
 
  font-family: 'Roboto', sans-serif;
 }
-
+#message {
+  text-align: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+}
 .content {
   background: #FFFFED;
   display: flex;
   flex-flow: row wrap;
   display: flexwrap;
   margin: 0 auto;
-  // text-align: center;
   color: black;
   justify-content: space-evenly;
-  // align-items: center;
-  // border: 1px solid;
   cursor: pointer;
   margin: -1px;
   outline: none;
   padding: 1.5rem;
-  // padding: 1rem;
-
   font-family: 'Roboto', sans-serif;
 }

@@ -1,14 +1,13 @@
 {{#each recipes as |recipe|}}
   {{log recipe}}
   <section data-id="{{recipe.id}}" class="grid-item {{recipe.meal}}">
-    <h6><p class="name">Name:</p></h6>
+    <h5><p class="name">Name:</p></h5>
     <h3>
       {{recipe.name}}
-    </h2>
+    </h3>
 
-    <h6><p class="meal">Meal:</p></h6>
 
-      {{recipe.meal}}
+    <h6><p class="meal">Meal:</p></h6> {{recipe.meal}}
 
 
 

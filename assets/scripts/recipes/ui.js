@@ -37,6 +37,7 @@ const getRecipesSuccess = (data) => {
   console.log(data.recipes)
   console.log(data)
   console.log('getting them')
+  $('.grid').show()
 
   const showRecipesHtml = showRecipesTemplate({ recipes: data.recipes })
   $('.content').html(showRecipesHtml)
@@ -78,6 +79,7 @@ const signInSuccessful = responseData => {
   $('.sign-out').show()
   $('.change-password').show()
   $('form').trigger('reset')
+  $('#getRecipesButton').show()
   console.log('sign in successful!')
 }
 const signInFailure = responseData => {
@@ -97,6 +99,8 @@ const signOutSuccessful = responseData => {
   $('.add-recipe').hide()
   hideMessaging()
   $('form').trigger('reset')
+  $('.grid').hide()
+  $('#getRecipesButton').hide()
   store.user = null
   console.log('you signed out')
 }
