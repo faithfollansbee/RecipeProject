@@ -74,7 +74,6 @@ const deleteRecipe = function (id) {
 }
 
 const updateRecipe = function (formData, id) {
-  console.log('updating?')
   return $.ajax({
     url: config.apiUrl + '/recipes/' + id,
     method: 'PATCH',

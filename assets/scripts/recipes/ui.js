@@ -34,17 +34,12 @@ $('.button-group').each(function (i, buttonGroup) {
 })
 
 const getRecipesSuccess = (data) => {
-  console.log(data.recipes)
-  console.log(data)
-  console.log('getting them')
   $('.grid').show()
-
   const showRecipesHtml = showRecipesTemplate({ recipes: data.recipes })
   $('.content').html(showRecipesHtml)
 }
 
 const updateRecipeSuccess = (data) => {
-  console.log(data)
   $('#message').text('updatedrecipe')
   // const updateRecipesHtml = updateRecipesTemplate({ recipes: data.recipes })
   // $('.content').html(updateRecipesHtml)
@@ -61,13 +56,11 @@ const signUpSuccessful = responseData => {
   $('#message').show()
   $('#message').text('You signed up!')
   $('form').trigger('reset')
-  console.log('maybe sign up worked')
 }
 const signUpFailure = responseData => {
   $('#message').show()
   $('#message').text('Sign up didn\'t worK! Give it another try.!')
   $('form').trigger('reset')
-  console.log('sign up failed')
 }
 const signInSuccessful = responseData => {
   $('#message').show()
@@ -80,12 +73,10 @@ const signInSuccessful = responseData => {
   $('.change-password').show()
   $('form').trigger('reset')
   $('#getRecipesButton').show()
-  console.log('sign in successful!')
 }
 const signInFailure = responseData => {
   $('#message').text('Wrong email or password. Try again.')
   $('form').trigger('reset')
-  console.log('sign in failure')
 }
 
 const signOutSuccessful = responseData => {
@@ -102,7 +93,6 @@ const signOutSuccessful = responseData => {
   $('.grid').hide()
   $('#getRecipesButton').hide()
   store.user = null
-  console.log('you signed out')
 }
 
 const signOutFailure = () => {
@@ -123,10 +113,12 @@ const changePasswordFailure = () => {
 
 const addRecipeSuccessful = () => {
   $('#message').text('added recipe!')
+  $('form').trigger('reset')
 }
 
 const addRecipeFailure = () => {
   $('#message').text('didn\'t add recipe')
+  $('form').trigger('reset')
 }
 
 const deleteRecipeSuccessful = () => {
