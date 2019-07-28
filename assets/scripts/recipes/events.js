@@ -3,7 +3,7 @@ const api = require('./api')
 const ui = require('./ui')
 
 const onSignUp = event => {
-  const form = event.target
+  const form = event.target//
   event.preventDefault()
   const formData = getFormFields(form)
   api.signUp(formData)
@@ -66,6 +66,13 @@ const addHandlers = () => {
   $('#getRecipesButton').on('click', onGetRecipes)
   $('.content').on('click', '.delete-recipe', onDeleteRecipe)
   $('.content').on('submit', '.update-recipe', onUpdateRecipe)
+  $('.content').on('click', '.enlarge-recipe', onEnlargeRecipe)
+}
+
+const onEnlargeRecipe = (event) => {
+  event.preventDefault()
+  $('.grid-item').click(function () { $(this).toggleClass('active') })
+  // const recipeId = $(event.target).closest('section').data('id')
 }
 
 const onUpdateRecipe = (event) => {
@@ -86,5 +93,6 @@ module.exports = {
   onDeleteRecipe,
   onUpdateRecipe,
   onGetRecipes,
-  addHandlers
+  addHandlers,
+  onEnlargeRecipe
 }

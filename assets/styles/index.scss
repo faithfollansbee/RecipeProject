@@ -3,7 +3,7 @@
 
 .grid-item {
   font-size: 12px;
-  position: relative;
+  // position: relative;
   float: left;
   width: 250px;
   height: 270px;
@@ -15,8 +15,13 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.grid-item.active {
+  transform: scale(2,2);
+
+}
+
 .grid-item .cooking-time {
-font-size: 12px;
+font-size: 11px;
 }
 
 .grid-item > * {
@@ -25,12 +30,12 @@ font-size: 12px;
 }
 
 .grid-item .name {
-  position: absolute;
+//  position: absolute;
   left: 10px;
   top: 60px;
   text-transform: none;
   letter-spacing: 0;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: bold;
 }
 

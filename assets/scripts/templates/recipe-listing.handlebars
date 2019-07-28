@@ -1,6 +1,7 @@
 {{#each recipes as |recipe|}}
   {{log recipe}}
   <section data-id="{{recipe.id}}" class="grid-item {{recipe.meal}}">
+    <span class="close">&times;</span>
     <h5><p class="name">Name:</p></h5>
     <h3>
       {{recipe.name}}
@@ -33,6 +34,7 @@
         <button type="submit" data-id="{{recipe.id}}" class="btn btn-info update-recipe">update</button>
       </form>
 
+    <button id="enlarge-recipe" type="click" class="enlarge-recipe">Enlarge</button>
 
     <button id="delete-recipe" type="click" class="btn btn-danger delete-recipe">Remove</button>
     <!-- <button class="btn btn-danger delete-recipe" data-id="{{recipe.id}}"> Delete Recipe </button>-->

@@ -17,4 +17,12 @@ $(() => {
   $('.delete-book').on('click', events.onDeleteRecipe)
   // $('.update-book').on('submit', events.onUpdateRecipe)
   events.addHandlers()
+  // $(function () {
+  //   $('.grid-item').click(function () { $(this).toggleClass('active') })
+  // })
+  // $('.grid-item {{recipe.meal}}').on('click', events.onClick)
+  // $(function () {
+  //  $('div').click(function () { $(this).toggleClass('active') })
+//  })
 })
+// class="grid-item {{recipe.meal}}">
