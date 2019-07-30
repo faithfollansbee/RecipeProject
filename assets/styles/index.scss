@@ -3,7 +3,6 @@
 
 .grid-item {
   font-size: 12px;
-  // position: relative;
   float: left;
   width: 250px;
   height: 270px;
@@ -15,13 +14,31 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.grid-item.active {
-  transform: scale(2,2);
-
+.flex-container {
 }
 
+.grid-item.active {
+  transform: scale(2,2);
+  z-index: 1;
+  border: 1px black solid;
+  position: absolute;
+  // content: "close";
+  // .grid-item span {
+  //   content: 'close';
+  // }
+  // $('.enlarge-recipe').click(function () { $(this).text('close') })
+  // .grid-item span {
+    // content: "close";
+  // }
+}
+
+// .grid-item.active:after {
+  // line-height: initial; /* New content takes up original line height */
+//}
+
+
 .grid-item .cooking-time {
-font-size: 11px;
+  font-size: 11px;
 }
 
 .grid-item > * {
@@ -30,7 +47,6 @@ font-size: 11px;
 }
 
 .grid-item .name {
-//  position: absolute;
   left: 10px;
   top: 60px;
   text-transform: none;
@@ -66,12 +82,18 @@ font-size: 11px;
   background-color: white;
   color: black;
   font-family: 'Roboto', sans-serif;
+  align-self: flex-end;
+}
+
+#enlarge-recipe {
+  align-self: flex-end;
 }
 
 .updateRecipe {
   background-color: white;
   color: black;
   font-family: 'Roboto', sans-serif;
+  align-self: flex-end;
 }
 
 #getRecipesButton {
@@ -144,7 +166,6 @@ display: none;
   position: absolute;
  background-color: #f9f9f9;
  min-width: 160px;
- // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
  padding: 12px 16px;
  z-index: 1;
  font-family: 'Roboto', sans-serif;
