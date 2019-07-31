@@ -131,11 +131,11 @@
   clear: both;
 }
 
-.grid-item.Breakfast    { background: #B8C2E6}
-.grid-item.Lunch  { background: #78A7AD}
-.grid-item.Vegetarian   {background: #ACD0E6}
-.grid-item.Dinner      { background: #D7F6FA}
-.grid-item.Dessert      { background: #B8C2E6}
+.grid-item.Breakfast    { background: #B8CED9}
+.grid-item.Lunch  { background: #E0D5D5}
+.grid-item.Vegetarian   {background: #DAE3DA}
+.grid-item.Dinner      { background: #D9D6D4}
+.grid-item.Dessert      { background: #D0CED9}
 
 
 .dropdown {
@@ -182,7 +182,7 @@ display: none;
 }
 
 body {
-background-color: #212e52;
+background-color: #FFF2F0;
  min-height: 80vh;
  padding: 5rem 0 1rem;
 justify-content: space-evenly;
@@ -224,10 +224,10 @@ nav {
   text-align: center;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
-  background-color: #cecfe2;
+  background-color: #FFF2F0;
 }
 .content {
-  background: #212e52;
+  background: #FFF2F0;
   display: flex;
   flex-flow: row wrap;
   display: flexwrap;
