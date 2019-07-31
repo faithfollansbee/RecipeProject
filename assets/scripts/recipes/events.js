@@ -70,6 +70,9 @@ const addHandlers = () => {
   $('.content').on('click', '.enlarge-recipe', function () {
     $(this).closest('.grid-item').toggleClass('active')
   })
+  $('.content').on('click', '.close-recipe', function () {
+    $(this).closest('.grid-item').toggleClass('closed')
+  })
 }
 
 // const onEnlargeRecipe = (event) => {
