@@ -47,6 +47,15 @@ const onAddRecipe = event => {
     .catch(ui.addRecipeFailure)
 }
 
+const onAddTag = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.addRecipe(formData)
+    .then(ui.addTagSuccessful)
+    .catch(ui.addTagFailure)
+}
+
 const onDeleteRecipe = (event) => {
   event.preventDefault()
   const recipeId = $(event.target).closest('section').data('id')
@@ -111,6 +120,7 @@ module.exports = {
   onDeleteRecipe,
   onUpdateRecipe,
   onGetRecipes,
-  addHandlers
+  addHandlers,
+  onAddTag
   // onCloseRecipe
 }

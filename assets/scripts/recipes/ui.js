@@ -142,6 +142,14 @@ const deleteRecipeFailure = () => {
   $('#message').text('didn\'t delete recipe')
 }
 
+const addTagSuccessful = () => {
+  $('#message').text('Added tag. wOw!')
+}
+
+const addTagFailure = () => {
+  $('#message').text('didn\'t add tag')
+}
+
 module.exports = {
   signUpSuccessful,
   signUpFailure,
@@ -156,5 +164,7 @@ module.exports = {
   deleteRecipeSuccessful,
   deleteRecipeFailure,
   getRecipesSuccess,
-  updateRecipeSuccess
+  updateRecipeSuccess,
+  addTagSuccessful,
+  addTagFailure
 }

@@ -13,6 +13,7 @@ $(() => {
   $('#sign-out').on('click', events.onSignOut)
   $('#change-password').on('submit', events.onChangePassword)
   $('#add-recipe').on('submit', events.onAddRecipe)
+  $('#add-tag').on('submit', events.onAddTag)
   // $('.view-recipes').on('click', events.onViewRecipes)
   $('.delete-book').on('click', events.onDeleteRecipe)
   // $('.update-book').on('submit', events.onUpdateRecipe)
