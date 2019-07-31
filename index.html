@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nixie+One&display=swap" rel="stylesheet">
+
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -78,6 +81,19 @@
         <button  data-filter=".Dessert">Dessert</button>
       </div>
     </div>
+
+        <div id="filter" class="button-group dropdown">
+          <button class="button is-checked dropbtn view-recipes" data-filter="*" style="display: none"> Filter by Ingredient </button>
+          <div class="dropdown-content">
+            <button data-filter="*"> All </button>
+            <button  data-filter=".shrimp">Shrimp</button>
+            <button  data-filter=".eggs">Eggs</button>
+            <button  data-filter=".peanutButter">Peanut butter</button>
+            <button  data-filter=".garlic">Garlic</button>
+            <button  data-filter=".butter">Butter</button>
+          </div>
+        </div>
+
 
     <div class="dropdown">
       <span class="sign-out" style="display: none">Sign out</span>

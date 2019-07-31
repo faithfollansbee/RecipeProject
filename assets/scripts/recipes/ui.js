@@ -33,6 +33,20 @@ $('.button-group').each(function (i, buttonGroup) {
   })
 })
 
+$('#filter').on('click', 'button', function () {
+  const filterValue = $(this).attr('data-filter')
+  // use filterFn if matches value
+  $('.grid').isotope({ filter: filterValue })
+})
+
+$('.button-group').each(function (i, buttonGroup) {
+  const $buttonGroup = $(buttonGroup)
+  $buttonGroup.on('click', 'button', function () {
+    $buttonGroup.find('.is-checked').removeClass('is-checked')
+    $(this).addClass('is-checked')
+  })
+})
+
 const getRecipesSuccess = (data) => {
   $('.grid').show()
   const showRecipesHtml = showRecipesTemplate({ recipes: data.recipes })
