@@ -87,6 +87,7 @@ const signInSuccessful = responseData => {
   $('.change-password').show()
   $('form').trigger('reset')
   $('#getRecipesButton').show()
+  $('#add-tag').show()
 }
 const signInFailure = responseData => {
   $('#message').text('Wrong email or password. Try again.')

@@ -84,24 +84,6 @@ const addHandlers = () => {
   })
 }
 
-// const onEnlargeRecipe = (event) => {
-//  console.log('enlarge is running')
-//  event.preventDefault()
-//  $('.grid-item').click(function () { $(this).toggleClass('active') })
-//  $('.grid-item').click(function () { $(this).addClass('active') })
-//   $('.enlarge-recipe').text() === 'Enlarge' ? 'Close' : 'Enlarge' )
-//   $('.enlarge-recipe').hide()
-//   $('.enlarge-recipe').click(function () { $(this).text('close') })
-//   const recipeId = $(event.target).closest('section').data('id')
-//   $('.enlarge-recipe').click(function () { $(this).text() === 'Enlarge' ? 'Close' : 'Enlarge' })
-// }
-
-// const onCloseRecipe = (event) => {
-//  event.preventDefault()
-//  $('.grid-item').click(function () { $(this).toggleClass('active') })
-//   $('.enlarge-recipe').click(function () { $(this).text('enlarge') })
-// }
-
 const onUpdateRecipe = (event) => {
   event.preventDefault()
   const id = $(event.target).closest('section').data('id')
