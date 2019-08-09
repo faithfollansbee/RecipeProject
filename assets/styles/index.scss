@@ -4,7 +4,7 @@
 nav {
   margin: auto;
   align-text: center;
-  background: #cecfe2;
+  background: #945D60;
   display: flex;
   margin: 0 auto;
   text-align: center;
@@ -98,7 +98,7 @@ nav {
 #delete-recipe {
   background-color: white;
   color: black;
-font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   align-self: flex-end;
 }
 
@@ -150,11 +150,11 @@ font-family: 'Open Sans', sans-serif;
   clear: both;
 }
 
-.grid-item.Breakfast    { background: #B8CED9}
-.grid-item.Lunch  { background: #E0D5D5}
+.grid-item.Breakfast    { background: #945D60}
+.grid-item.Lunch  { background: #636B46}
 .grid-item.Vegetarian   {background: #DAE3DA}
-.grid-item.Dinner      { background: #D9D6D4}
-.grid-item.Dessert      { background: #D0CED9}
+.grid-item.Dinner      { background: #626E60}
+.grid-item.Dessert      { background: #CDA34}
 
 
 .dropdown {
@@ -214,8 +214,12 @@ h6 {
   font-size: 9px;
 }
 
+.body {
+  background-color: #FFF2F0;
+}
+
 .content {
-  background: #FFF2F0;
+  background-color: #FFF2F0;
   display: flex;
   flex-flow: row wrap;
   display: flexwrap;
