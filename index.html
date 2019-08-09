@@ -26,34 +26,47 @@
 
 <body>
   <h1></h1>
-<nav>
-    <div class="dropdown">
-      <span class="sign-in">Sign In</span>
-      <div class="dropdown-content">
-        <p>
-          <form id="sign-in">
-            <input type="email" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <button class="button">Sign in!</button>
-          </form>
-        </p>
-      </div>
-    </div>
+  <div class="landing">
+    <form id="sign-in" class="p-2">
+      <input class="form-control mb-1" type="email" name="credentials[email]" placeholder="Email">
+      <input class="form-control mb-1" type="password" name="credentials[password]" placeholder="Password">
+      <button class="button btn btn-primary">Sign in</button>
+    </form>
 
-    <div class="dropdown">
-      <span class="sign-up">Sign Up</span>
-      <div class="dropdown-content">
-        <p>
-          <form id="sign-up">
-            <input type="email" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-            <button class="button">Sign up!</button>
-          </form>
-        </p>
-      </div>
-    </div>
+    <form id="sign-up" class="p-2">
+      <input class="form-control mb-1" type="email" name="credentials[email]" placeholder="Email">
+      <input class="form-control mb-1" type="password" name="credentials[password]" placeholder="Password">
+      <input class="form-control mb-1" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+      <button class="button btn btn-primary">Sign up</button>
+    </form>
+  </div>
 
+<nav class="nav">
+
+  <button id="hide-password" type="button" class="btn btn-primary hide-ps modal-launch" data-toggle="modal" data-target="#change-password-modal">
+            Change Password
+          </button>
+
+  <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="changePassword" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="changePassword">Change Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                    <h2>Change Password</h2>
+                    <form id="change-password">
+                      <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password">
+                      <input class="form-control" type="password" name="passwords[new]" placeholder="New Password">
+                      <button class="button btn-primary hide hide-ps">change password!</button>
+                    </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
     <div class="dropdown">
       <span class="add-recipe hidden" style="display: none">Add Recipe</span>
@@ -109,18 +122,6 @@
       </div>
     </div>
 
-  <div class="dropdown">
-    <span class="change-password"style="display: none">Change password</span>
-    <div class="dropdown-content">
-      <p>
-        <form id="change-password">
-        <input type="password" name="passwords[old]" placeholder="Old Password">
-              <input type="password" name="passwords[new]" placeholder="New Password">
-          <button class="button">change password!</button>
-      </form>
-      </p>
-    </div>
-  </div>
 
   <button id="getRecipesButton" class="btn btn-info mr-2 hidden" style="display: none"> Get Recipes</button>
 

@@ -79,8 +79,12 @@ const signUpFailure = responseData => {
 const signInSuccessful = responseData => {
   $('#message').show()
   store.user = responseData.user
-  $('.sign-up').hide()
-  $('.sign-in').hide()
+  // $('.sign-up').hide()
+  // $('.sign-in').hide()
+  $('.nav').show()
+  $('.landing').hide()
+  $('#hide-password').show()
+  // $('.dropdown-content').hide()
   $('.add-recipe').show()
   $('.view-recipes').show()
   $('.sign-out').show()
@@ -97,9 +101,12 @@ const signInFailure = responseData => {
 const signOutSuccessful = responseData => {
   $('#message').show()
   $('#message').text('You signed out!')
+
+  $('#hide-password').hide()
   $('.change-password').hide()
   $('.sign-up').show()
-  $('.sign-in').show()
+  $('.nav').hide()
+  $('.landing').show()
   $('.sign-out').hide()
   $('.view-recipes').hide()
   $('.add-recipe').hide()
@@ -118,6 +125,9 @@ const changePasswordSuccessful = responseData => {
   $('#message').text('You changed password successfully!')
   // store.user = responseData.user
   // $('#sign-up').hide()
+  $('#change-password-modal').modal('hide')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
   $('form').trigger('reset')
 }
 
