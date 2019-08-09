@@ -66,7 +66,6 @@ const onDeleteRecipe = (event) => {
 
 const onGetRecipes = (event) => {
   event.preventDefault()
-  console.log('here?')
   api.getRecipes()
     .then(ui.getRecipesSuccess)
     .catch(ui.getRecipesFailure)

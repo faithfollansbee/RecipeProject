@@ -1,6 +1,31 @@
 @import '~bootstrap/scss/bootstrap';
 * { box-sizing: border-box; }
 
+nav {
+  margin: auto;
+  align-text: center;
+  background: #cecfe2;
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 20px;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  padding: 1.5rem 0;
+  top: 50%;
+  left: 50%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#message {
+  text-align: center;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #FFF2F0;
+}
+
 .grid-item {
   font-size: 12px;
   float: left;
@@ -12,9 +37,7 @@
   color: #262524;
   overflow: scroll;
   font-family: 'Merriweather', serif;
-}
-
-.flex-container {
+  min-height: 270px;
 }
 
 .grid-item.active {
@@ -54,22 +77,23 @@
   font-size: 20px;
 }
 
-.button {
-  flex-direction: column;
-  flex-direction: row;
-  background-color: white;
-  color: black;
-  padding: 14px 0;
-  font-size: 20px;
-  border: none;
-  font-family: 'Open Sans', sans-serif;
-  display: block;
- border-radius: 7px;
- font-family: sans-serif;
- font-size: 14px;
- text-shadow: 0 1px white;
- cursor: pointer;
-}
+
+// .button {
+//   flex-direction: column;
+//   flex-direction: row;
+//   background-color: white;
+//   color: black;
+//   padding: 14px 0;
+//   font-size: 20px;
+//   border: none;
+//   font-family: 'Open Sans', sans-serif;
+//   display: block;
+//  border-radius: 7px;
+//  font-family: sans-serif;
+//  font-size: 14px;
+//  // text-shadow: 0 1px white;
+//  cursor: pointer;
+// }
 
 #delete-recipe {
   background-color: white;
@@ -105,13 +129,15 @@ font-family: 'Open Sans', sans-serif;
   color: #222;
   text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
 }
- .button-group {
-  margin-bottom: 20px;
-  background-color: inherit;
-  font-family: 'Open Sans', sans-serif;
-  display: block;
-  font-size: 20px;
-}
+
+
+ // .button-group {
+//   margin-bottom: 20px;
+//   background-color: inherit;
+//   font-family: 'Open Sans', sans-serif;
+//   display: block;
+//   font-size: 20px;
+// }
 
 .button-group:after {
   content: '';
@@ -130,17 +156,19 @@ font-family: 'Open Sans', sans-serif;
 .grid-item.Dinner      { background: #D9D6D4}
 .grid-item.Dessert      { background: #D0CED9}
 
+
 .dropdown {
   position: relative;
   display: inline-block;
   font-family: 'Open Sans', sans-serif;
 }
 
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-
+// styles filter buttons
 .dropbtn {
   align-text: centered;
   background-color: inherit;
@@ -173,15 +201,6 @@ font-family: 'Open Sans', sans-serif;
   display: block;
 }
 
-body {
-  background-color: #FFF2F0;
-  min-height: 80vh;
-  padding: 5rem 0 1rem;
-  justify-content: space-evenly;
-  font-family: sans-serif;
-  font-family: 'Merriweather', serif;
-}
-
 h1 {
 background: #cecfe2;
 }
@@ -194,29 +213,7 @@ h5 {
 h6 {
   font-size: 9px;
 }
-nav {
-  margin: auto;
-  align-text: center;
-  background: #cecfe2;
-  display: flex;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 20px;
-  justify-content: space-around;
-  align-items: center;
-  cursor: pointer;
-  outline: none;
-  padding: 1.5rem 0;
-  top: 50%;
-  left: 50%;
-  font-family: 'Open Sans', sans-serif;
-}
-#message {
-  text-align: center;
-  justify-content: center;
-  font-family: 'Open Sans', sans-serif;
-  background-color: #FFF2F0;
-}
+
 .content {
   background: #FFF2F0;
   display: flex;
