@@ -8,17 +8,6 @@ const Isotope = require('isotope-layout')
 // make Isotope a jQuery plugin
 jQueryBridget('isotope', Isotope, $)
 
-// const $grid = $('.grid').isotope({
-//   //itemSelector: '.element-item',
-//   layoutMode: 'fitRows'
-//   // getSortData: {
-//   //  name: '.name',
-//   //  meal: '.meal',
-//   //  cookingt_time: '.cooking-time',
-//   //  category: '[data-category]'
-//   // }
-// })
-
 $('#filters').on('click', 'button', function () {
   const filterValue = $(this).attr('data-filter')
   // use filterFn if matches value
@@ -50,37 +39,60 @@ $('.button-group').each(function (i, buttonGroup) {
 const getRecipesSuccess = (data) => {
   $('.grid').show()
   const showRecipesHtml = showRecipesTemplate({ recipes: data.recipes })
+  $('#getMessage').show()
   $('.content').html(showRecipesHtml)
+  $('#getMessage').text('Here are your recipes!')
+  hideGetMessage()
 }
 
 const updateRecipeSuccess = (data) => {
+  $('#message').show()
   $('#message').text('updatedrecipe')
-  // const updateRecipesHtml = updateRecipesTemplate({ recipes: data.recipes })
-  // $('.content').html(updateRecipesHtml)
+  hideMessaging()
 }
 
 const hideMessaging = function () {
   setTimeout(function () {
     $('#message').text('')
     $('#message').hide()
-  }, 4000)
+  }, 3000)
+}
+
+const hideGetMessage = function () {
+  setTimeout(function () {
+    $('#getMessage').text('')
+    $('#getMessage').hide()
+  }, 3000)
+}
+
+const hideLandingMessaging = function () {
+  setTimeout(function () {
+    $('#landing-message').text('')
+    $('#landing-message').hide()
+  }, 3000)
 }
 
 const signUpSuccessful = responseData => {
-  $('#message').show()
-  $('#message').text('You signed up!')
+  $('#landing-message').show()
+  $('#landing-message').text('You signed up!')
   $('form').trigger('reset')
+  hideLandingMessaging()
 }
+
 const signUpFailure = responseData => {
-  $('#message').show()
-  $('#message').text('Sign up didn\'t worK! Give it another try.!')
+  $('#landing-message').show()
+  $('#landing-message').text('Sign up didn\'t worK! Give it another try.!')
   $('form').trigger('reset')
+  hideLandingMessaging()
 }
 const signInSuccessful = responseData => {
   $('#message').show()
+  $('#message').text('you signed in!')
+  hideMessaging()
   store.user = responseData.user
-  $('.sign-up').hide()
-  $('.sign-in').hide()
+  $('.nav').show()
+  $('.landing').hide()
+  $('#hide-password').show()
   $('.add-recipe').show()
   $('.view-recipes').show()
   $('.sign-out').show()
@@ -90,20 +102,24 @@ const signInSuccessful = responseData => {
   $('#add-tag').show()
 }
 const signInFailure = responseData => {
-  $('#message').text('Wrong email or password. Try again.')
+  $('#landing-message').show()
+  $('#landing-message').text('Wrong email or password. Try again.')
   $('form').trigger('reset')
+  hideLandingMessaging()
 }
 
 const signOutSuccessful = responseData => {
-  $('#message').show()
-  $('#message').text('You signed out!')
+  $('#landing-message').show()
+  $('#landing-message').text('You signed out!')
+  $('#hide-password').hide()
   $('.change-password').hide()
   $('.sign-up').show()
-  $('.sign-in').show()
+  $('.nav').hide()
+  $('.landing').show()
   $('.sign-out').hide()
   $('.view-recipes').hide()
   $('.add-recipe').hide()
-  hideMessaging()
+  hideLandingMessaging()
   $('form').trigger('reset')
   $('.grid').hide()
   $('#getRecipesButton').hide()
@@ -111,44 +127,53 @@ const signOutSuccessful = responseData => {
 }
 
 const signOutFailure = () => {
+  $('#message').show()
   $('#message').text('You failed to sign out successfully.')
+  hideMessaging()
 }
 
 const changePasswordSuccessful = responseData => {
+  $('#message').show()
   $('#message').text('You changed password successfully!')
   // store.user = responseData.user
   // $('#sign-up').hide()
+  $('#change-password-modal').modal('hide')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
   $('form').trigger('reset')
+  hideMessaging()
 }
 
 const changePasswordFailure = () => {
+  $('#message').show()
   $('#message').text('You failed to change password')
   $('form').trigger('reset')
+  hideMessaging()
 }
 
 const addRecipeSuccessful = () => {
+  $('#message').show()
   $('#message').text('added recipe!')
   $('form').trigger('reset')
+  hideMessaging()
 }
 
 const addRecipeFailure = () => {
+  $('#message').show()
   $('#message').text('didn\'t add recipe')
   $('form').trigger('reset')
+  hideMessaging()
 }
 
 const deleteRecipeSuccessful = () => {
+  $('#message').show()
   $('#message').text('deleted recipe')
+  hideMessaging()
 }
 const deleteRecipeFailure = () => {
+  $('#message').show()
   $('#message').text('didn\'t delete recipe')
-}
-
-const addTagSuccessful = () => {
-  $('#message').text('Added tag. wOw!')
-}
-
-const addTagFailure = () => {
-  $('#message').text('didn\'t add tag')
+  hideMessaging()
 }
 
 module.exports = {
@@ -165,7 +190,5 @@ module.exports = {
   deleteRecipeSuccessful,
   deleteRecipeFailure,
   getRecipesSuccess,
-  updateRecipeSuccess,
-  addTagSuccessful,
-  addTagFailure
+  updateRecipeSuccess
 }

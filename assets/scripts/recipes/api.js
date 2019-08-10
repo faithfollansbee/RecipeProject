@@ -53,17 +53,6 @@ const addRecipe = formData => {
   })
 }
 
-const addTag = formData => {
-  return $.ajax({
-    url: config.apiUrl + '/recipes',
-    method: 'POST',
-    data: formData,
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
 const getRecipes = function () {
   return $.ajax({
     url: config.apiUrl + '/recipes',
@@ -103,6 +92,5 @@ module.exports = {
   addRecipe,
   getRecipes,
   deleteRecipe,
-  updateRecipe,
-  addTag
+  updateRecipe
 }

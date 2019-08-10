@@ -3,8 +3,9 @@ const api = require('./api')
 const ui = require('./ui')
 
 const onSignUp = event => {
-  const form = event.target//
   event.preventDefault()
+  const form = event.target//
+  // event.preventDefault()
   const formData = getFormFields(form)
   api.signUp(formData)
     .then(ui.signUpSuccessful)
@@ -17,6 +18,11 @@ const onSignIn = event => {
   const formData = getFormFields(form)
   api.signIn(formData)
     .then(ui.signInSuccessful)
+    .then(() => {
+      api.getRecipes()
+        .then(ui.getRecipesSuccess)
+        // .catch(ui.onIndexFailure)
+    })
     .catch(ui.signInFailure)
 }
 
@@ -60,6 +66,7 @@ const onDeleteRecipe = (event) => {
   event.preventDefault()
   const recipeId = $(event.target).closest('section').data('id')
   api.deleteRecipe(recipeId)
+    .then(ui.deleteRecipeSuccessful)
     .then(() => onGetRecipes(event))
     .catch(ui.failure)
 }
