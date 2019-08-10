@@ -27,6 +27,7 @@
 <body>
   <h1></h1>
   <div class="landing">
+    <div id="landing-message"></div>
     <form id="sign-in" class="p-2">
       <input class="form-control mb-1" type="email" name="credentials[email]" placeholder="Email">
       <input class="form-control mb-1" type="password" name="credentials[password]" placeholder="Password">
@@ -43,7 +44,7 @@
 
 <nav class="nav">
 
-  <button id="hide-password" type="button" class="btn btn-primary hide-ps modal-launch" data-toggle="modal" data-target="#change-password-modal">
+  <button id="hide-password" type="button" class="btn btn-primary hide-ps modal-launch hidden" data-toggle="modal" data-target="#change-password-modal">
             Change Password
           </button>
 
@@ -90,7 +91,6 @@
         <button data-filter="*"> All </button>
         <button  data-filter=".Breakfast">Breakfast</button>
         <button  data-filter=".Dinner">Dinner</button>
-        <button  data-filter=".Lunch">Lunch</button>
         <button  data-filter=".Vegetarian">Vegetarian</button>
         <button  data-filter=".Dessert">Dessert</button>
       </div>
@@ -100,12 +100,9 @@
           <button class="button is-checked dropbtn view-recipes" data-filter="*" style="display: none"> Filter by Ingredient </button>
           <div class="dropdown-content">
             <button data-filter="*"> All </button>
-            <button  data-filter=".shrimp">Shrimp</button>
             <button  data-filter=".eggs">Eggs</button>
-            <button  data-filter=".peanutButter">Peanut butter</button>
             <button  data-filter=".garlic">Garlic</button>
             <button  data-filter=".butter">Butter</button>
-            <button  data-filter=".tomatoes">Tomatoes</button>
             <button  data-filter=".milk">Milk</button>
           </div>
         </div>
@@ -130,6 +127,7 @@
 </nav>
 
   <div id="message"> </div>
+  <div id="getMessage"></div>
 
 
 <div class="flex-container content grid" id="content"> </div>
