@@ -152,8 +152,6 @@ const changePasswordFailure = () => {
 }
 
 const addRecipeSuccessful = () => {
-//  event.preventDefault()
-  console.log('yes')
   $('#message').show()
   $('#message').text('added recipe!')
   $('form').trigger('reset')
@@ -161,7 +159,6 @@ const addRecipeSuccessful = () => {
 }
 
 const addRecipeFailure = () => {
-  console.log('fail')
   $('#message').show()
   $('#message').text('didn\'t add recipe')
   $('form').trigger('reset')

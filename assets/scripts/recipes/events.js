@@ -45,7 +45,6 @@ const onChangePassword = event => {
 }
 
 const onAddRecipe = event => {
-  console.log('onAddRecipe made it this far')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
