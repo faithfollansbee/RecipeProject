@@ -93,6 +93,16 @@ nav {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
 }
+#add-recipe {
+  background-color: inherit;
+  flex-direction: column;
+  flex-direction: row;
+  color: black;
+  padding: 16px;
+  font-size: 20px;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+}
 
 #hide-password {
   background-color: inherit;

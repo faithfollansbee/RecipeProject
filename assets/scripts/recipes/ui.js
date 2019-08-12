@@ -93,7 +93,7 @@ const signInSuccessful = responseData => {
   $('.nav').show()
   $('.landing').hide()
   $('#hide-password').show()
-  $('.add-recipe').show()
+  $('#add-recipe').show()
   $('.view-recipes').show()
   $('.sign-out').show()
   $('.change-password').show()
@@ -152,6 +152,8 @@ const changePasswordFailure = () => {
 }
 
 const addRecipeSuccessful = () => {
+//  event.preventDefault()
+  console.log('yes')
   $('#message').show()
   $('#message').text('added recipe!')
   $('form').trigger('reset')
@@ -159,6 +161,7 @@ const addRecipeSuccessful = () => {
 }
 
 const addRecipeFailure = () => {
+  console.log('fail')
   $('#message').show()
   $('#message').text('didn\'t add recipe')
   $('form').trigger('reset')

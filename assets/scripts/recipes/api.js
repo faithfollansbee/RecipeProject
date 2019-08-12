@@ -20,6 +20,7 @@ module.exports = {
   signUp,
   signIn
 }
+
 const signOut = formData => {
   return $.ajax({
     url: config.apiUrl + '/sign-out',
