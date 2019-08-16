@@ -93,12 +93,13 @@ const signInSuccessful = responseData => {
   $('.nav').show()
   $('.landing').hide()
   $('#hide-password').show()
+  $('.add-recipe').show()
   $('#add-recipe').show()
   $('.view-recipes').show()
-  $('.sign-out').show()
+  // $('.sign-out').show()
   $('.change-password').show()
   $('form').trigger('reset')
-  $('#getRecipesButton').show()
+  // $('#getRecipesButton').show()
   $('#add-tag').show()
 }
 const signInFailure = responseData => {
