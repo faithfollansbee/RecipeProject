@@ -41,7 +41,7 @@ const getRecipesSuccess = (data) => {
   const showRecipesHtml = showRecipesTemplate({ recipes: data.recipes })
   $('#getMessage').show()
   $('.content').html(showRecipesHtml)
-  $('#getMessage').text('Here are your recipes!')
+  // $('#getMessage').text('Here are your recipes!')
   hideGetMessage()
 }
 

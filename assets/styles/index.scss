@@ -158,14 +158,6 @@ font-family: 'Open Sans', sans-serif;
 }
 
 
- // .button-group {
-//   margin-bottom: 20px;
-//   background-color: inherit;
-//   font-family: 'Open Sans', sans-serif;
-//   display: block;
-//   font-size: 20px;
-// }
-
 .button-group:after {
   content: '';
   clear: both;
@@ -195,11 +187,14 @@ font-family: 'Open Sans', sans-serif;
   display: block;
 }
 
+.menu {
+  color: black;
+}
 // styles filter buttons
 .dropbtn {
   align-text: centered;
   // background-color: inherit;
-  color: #FF3B3F;
+  color: black;
   padding: 16px;
   font-size: 20px;
   border: none;
@@ -226,6 +221,10 @@ font-family: 'Open Sans', sans-serif;
 
 .dropdown:hover .dropbtn {
   display: block;
+}
+
+btn {
+
 }
 
 
