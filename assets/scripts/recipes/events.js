@@ -84,11 +84,20 @@ const addHandlers = () => {
 
 const onUpdateRecipe = (event) => {
   event.preventDefault()
+  console.log('updated? in events file')
+  // event.preventDefault()
   const id = $(event.target).closest('section').data('id')
   const formData = getFormFields(event.target)
   api.updateRecipe(formData, id)
-  api.getRecipes()
     .then(ui.updateRecipeSuccess)
+    .then(() => {
+      api.getRecipes()
+        .then(ui.getRecipesSuccess)
+    })
+  // api.getRecipes()
+    // .then(ui.updateRecipeSuccess)
+    // .then(ui.getRecipesSuccess)
+    // .catch(ui.getRecipesFailure)
 }
 
 module.exports = {

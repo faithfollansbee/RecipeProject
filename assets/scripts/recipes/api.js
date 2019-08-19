@@ -55,6 +55,7 @@ const addRecipe = formData => {
 }
 
 const getRecipes = function () {
+  console.log('made it to api/get Recipes too')
   return $.ajax({
     url: config.apiUrl + '/recipes',
     method: 'GET',
@@ -75,6 +76,7 @@ const deleteRecipe = function (id) {
 }
 
 const updateRecipe = function (formData, id) {
+  console.log('made it to api/updateRecipe')
   return $.ajax({
     url: config.apiUrl + '/recipes/' + id,
     method: 'PATCH',
