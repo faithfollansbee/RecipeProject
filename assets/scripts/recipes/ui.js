@@ -1,6 +1,7 @@
 const store = require('../store')
 
 const showRecipesTemplate = require('../templates/recipe-listing.handlebars')
+
 // const updateRecipesTemplate = require('../templates/recipe-listing.handlebars')
 
 const jQueryBridget = require('jquery-bridget')
