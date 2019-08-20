@@ -46,7 +46,11 @@ const getRecipesSuccess = (data) => {
 }
 
 const updateRecipeSuccess = (data) => {
+  // event.preventDefault()
   $('#message').show()
+  $('#updateRecipeModal').modal('hide')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
   $('#message').text('updatedrecipe')
   hideMessaging()
 }
@@ -75,6 +79,9 @@ const hideLandingMessaging = function () {
 const signUpSuccessful = responseData => {
   $('#landing-message').show()
   $('#landing-message').text('You signed up!')
+  $('#sign-up-modal').modal('hide')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
   $('form').trigger('reset')
   hideLandingMessaging()
 }
@@ -98,6 +105,9 @@ const signInSuccessful = responseData => {
   $('.view-recipes').show()
   // $('.sign-out').show()
   $('.change-password').show()
+  $('#sign-in-modal').modal('hide')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
   $('form').trigger('reset')
   // $('#getRecipesButton').show()
   $('#add-tag').show()
@@ -155,6 +165,9 @@ const changePasswordFailure = () => {
 const addRecipeSuccessful = () => {
   $('#message').show()
   $('#message').text('added recipe!')
+  $('#addRecipeModal').modal('hide')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
   $('form').trigger('reset')
   hideMessaging()
 }

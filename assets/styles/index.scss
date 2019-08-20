@@ -2,7 +2,7 @@
 * { box-sizing: border-box; }
 
 .flex-container {
-  background: #945D60;
+//  background: #8FD8D2;
 }
 
 .landing {
@@ -11,13 +11,13 @@
   margin: 30% 30%;
   align-items: center;
   flex-direction: column;
-  background: #945D60;
+  background: #CAEBF2;
 }
 
 nav {
   margin: auto;
   align-text: center;
-  background: #945D60;
+  background: #CAEBF2;
   display: flex;
   margin: 0 auto;
   text-align: center;
@@ -36,14 +36,14 @@ nav {
   text-align: center;
   justify-content: center;
   font-family: 'Roboto Condensed', sans-serif;
-  background-color: #FFF2F0;
+  // background-color: #FFF2F0;
 }
 
 #getMessage {
   text-align: center;
   justify-content: center;
   font-family: 'Open Sans', sans-serif;
-  background-color: #FFF2F0;
+//  background-color: #FFF2F0;
 }
 
 .hidden {
@@ -158,14 +158,6 @@ font-family: 'Open Sans', sans-serif;
 }
 
 
- // .button-group {
-//   margin-bottom: 20px;
-//   background-color: inherit;
-//   font-family: 'Open Sans', sans-serif;
-//   display: block;
-//   font-size: 20px;
-// }
-
 .button-group:after {
   content: '';
   clear: both;
@@ -177,11 +169,11 @@ font-family: 'Open Sans', sans-serif;
   clear: both;
 }
 
-.grid-item.Breakfast    { background: #FFDDDB}
+.grid-item.Breakfast    { background: #EFEFEF}
 .grid-item.Lunch  { background: #636B46}
-.grid-item.Vegetarian   {background: #B3A09F}
+.grid-item.Vegetarian   {background: #EFEFEF}
 .grid-item.Dinner      { background: #E6CECC}
-.grid-item.Dessert      { background: #E9E7DA}
+.grid-item.Dessert      { background: #EFEFEF}
 
 
 .dropdown {
@@ -195,10 +187,13 @@ font-family: 'Open Sans', sans-serif;
   display: block;
 }
 
+.menu {
+  color: black;
+}
 // styles filter buttons
 .dropbtn {
   align-text: centered;
-  background-color: inherit;
+  // background-color: inherit;
   color: black;
   padding: 16px;
   font-size: 20px;
@@ -228,8 +223,13 @@ font-family: 'Open Sans', sans-serif;
   display: block;
 }
 
+btn {
+
+}
+
+
 h1 {
-background: #cecfe2;
+background: white;
 }
 h3 {
   font-size: 20px;
@@ -241,12 +241,14 @@ h6 {
   font-size: 9px;
 }
 
+
+
 .body {
-  background-color: #FFF2F0;
+  background-color: white;
 }
 
 .content {
-  background-color: #FFF2F0;
+  background-color: white;
   display: flex;
   flex-flow: row wrap;
   display: flexwrap;

@@ -26,6 +26,19 @@ const onSignIn = event => {
     .catch(ui.signInFailure)
 }
 
+const onGuest = event => {
+  event.preventDefault()
+  const guestInfo = {
+    'credentials': {
+      'email': 'guest@guest',
+      'password': 'guest'
+    }
+  }
+  api.signIn(guestInfo)
+    .then(ui.signInSuccessful)
+    .catch(ui.signInFailure)
+}
+
 const onSignOut = event => {
   event.preventDefault()
   const form = event.target
@@ -84,11 +97,20 @@ const addHandlers = () => {
 
 const onUpdateRecipe = (event) => {
   event.preventDefault()
+  console.log('updated? in events file')
+  // event.preventDefault()
   const id = $(event.target).closest('section').data('id')
   const formData = getFormFields(event.target)
   api.updateRecipe(formData, id)
-  api.getRecipes()
     .then(ui.updateRecipeSuccess)
+    .then(() => {
+      api.getRecipes()
+        .then(ui.getRecipesSuccess)
+    })
+  // api.getRecipes()
+    // .then(ui.updateRecipeSuccess)
+    // .then(ui.getRecipesSuccess)
+    // .catch(ui.getRecipesFailure)
 }
 
 module.exports = {
@@ -100,5 +122,6 @@ module.exports = {
   onDeleteRecipe,
   onUpdateRecipe,
   onGetRecipes,
-  addHandlers
+  addHandlers,
+  onGuest
 }
