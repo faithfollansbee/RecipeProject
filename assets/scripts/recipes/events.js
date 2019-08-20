@@ -26,6 +26,19 @@ const onSignIn = event => {
     .catch(ui.signInFailure)
 }
 
+const onGuest = event => {
+  event.preventDefault()
+  const guestInfo = {
+    'credentials': {
+      'email': 'guest@guest',
+      'password': 'guest'
+    }
+  }
+  api.signIn(guestInfo)
+    .then(ui.signInSuccessful)
+    .catch(ui.signInFailure)
+}
+
 const onSignOut = event => {
   event.preventDefault()
   const form = event.target
@@ -109,5 +122,6 @@ module.exports = {
   onDeleteRecipe,
   onUpdateRecipe,
   onGetRecipes,
-  addHandlers
+  addHandlers,
+  onGuest
 }

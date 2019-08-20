@@ -22,7 +22,7 @@
 
 
       </div>
-      <button id="update-recipe" type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateRecipeModal">
+      <button id="update-recipe" type="button" class="btn btn-default" data-toggle="modal" data-target="#updateRecipeModal">
         update recipes
       </button>
 
@@ -42,7 +42,7 @@
                 <input class="form-control" type="text" name="recipe[meal]" placeholder="meal">
                 <input class="form-control" type="text" name="recipe[cooking_time]" placeholder="cooking_time">
                 <input class="form-control" type="text" name="recipe[ingredients]" placeholder="ingredients">
-                <button type="submit" data-id="{{recipe.id}}" class="btn btn-info update-recipe"> update </button>
+                <button type="submit" data-id="{{recipe.id}}" class="btn btn-default update-recipe"> update </button>
             </form>
             </div>
             <div class="modal-footer"> <p id="updateRecipeFeedback"> </p></div>
@@ -50,19 +50,9 @@
         </div>
       </div>
 
-
-      <!--<form class="update-recipe">
-        <input type="text" name="recipe[name]" placeholder="recipe name"/>
-        <input type="text" name="recipe[meal]" placeholder="meal"/>
-        <input type="text" name="recipe[cooking_time]" placeholder="cooking_time"/>
-        <input type="text" name="recipe[ingredients]" placeholder="ingredients"/>
-        <button type="submit" data-id="{{recipe.id}}" class="btn btn-info update-recipe">update</button>
-      </form>-->
-
-    <button id="enlarge-recipe" type="click" class="enlarge-recipe"><span>Enlarge</span></button>
-    <button id="close-recipe" type="click" class="close-recipe">Close</button>
-
-    <button id="delete-recipe" type="click" class="btn btn-danger delete-recipe">Remove</button>
+    <button id="enlarge-recipe" type="click" class="btn-default enlarge-recipe"><span>Enlarge</span></button>
+    <button id="close-recipe" type="click" class="btn-default close-recipe">Close</button>
+    <button id="delete-recipe" type="click" class="btn btn-default delete-recipe">Remove</button>
     <!-- <button class="btn btn-danger delete-recipe" data-id="{{recipe.id}}"> Delete Recipe </button>-->
 
   </section>
