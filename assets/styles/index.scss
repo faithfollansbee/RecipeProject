@@ -229,7 +229,12 @@ btn {
 
 
 h1 {
-background: white;
+  color: black;
+  text-align: center;
+  font-size: 80px;
+  margin: 5% 5% 1% 5%;
+  font-family: 'Josefin Sans', sans-serif;
+  // font-family: 'Livvic', sans-serif;
 }
 h3 {
   font-size: 20px;
@@ -241,9 +246,8 @@ h6 {
   font-size: 9px;
 }
 
-
 body {
-  background-color: #FCD7D4;
+  // background-color: #FCD7D4;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -253,7 +257,7 @@ body {
 }
 
 .content {
-  background-color: white;
+//  background-color: white;
   display: flex;
   flex-flow: row wrap;
   display: flexwrap;
