@@ -1,30 +1,23 @@
+<div class="card-columns">
 {{#each recipes as |recipe|}}
+<div class="card-deck">
+<div class="card" style="width: 18rem">
+<div class="col-m-6">
   <section data-id="{{recipe.id}}" class="grid-item {{recipe.meal}} {{recipe.ingredients}}">
+    <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{recipe.name}}</li>
 
-    <h5><p class="name"></p></h5>
-    <h3>
-      {{recipe.name}}
-    </h3>
+      <li class="list-group-item">{{recipe.meal}}</li>
 
+      <li class="list-group-item">Prep time:{{recipe.cooking_timel}}</li>
 
-    <h6><p class="meal"> {{recipe.meal}} </p></h6>
-
-
-
-    <h6><p class="cooking-time">Cooking Time: {{recipe.cooking_time}}</p></h6>
-
-
-
-    <h6> <p class="ingredients"> </p> </h6><h3>Ingredients:</h3>
-
-      {{recipe.ingredients}}
-
-
-
-      </div>
-      <button id="update-recipe" type="button" class="btn btn-default" data-toggle="modal" data-target="#updateRecipeModal">
-        update recipes
-      </button>
+      <li class="list-group-item">Ingredients:{{recipe.ingredients}}</li>
+    </ul>
+    </div>
+    <button id="update-recipe" type="button" class="btn btn-default" data-toggle="modal" data-target="#updateRecipeModal">
+      update recipes
+    </button>
 
 
       <div class="modal fade" id="updateRecipeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -54,7 +47,10 @@
     <button id="close-recipe" type="click" class="btn-default close-recipe">Close</button>
     <button id="delete-recipe" type="click" class="btn btn-default delete-recipe">Remove</button>
     <!-- <button class="btn btn-danger delete-recipe" data-id="{{recipe.id}}"> Delete Recipe </button>-->
-
   </section>
+</div>
+</div>
+</div>
+</div>
 
 {{/each}}
