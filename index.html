@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Recipes </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+
+  <!--<script src="handlebars-v2.0.0.js"></script>
+  <script id="recipe-listing.handlebars" type="text/x-handlebars-template">-->
+
+  <!-- </script> -->
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="https://kit.fontawesome.com/a13584ea75.js"></script>
+</head>
+
+<body>
+<div class="landing">
+<h1>Recipe Book</h1>
+
+<button class="signIn button btn btn primary" id="hide-sign-in" type="button" class="dropdown-item modal-launch" data-toggle="modal" data-target="#sign-in-modal">
+Sign in
+</button>
+
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="signIn" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+          <h2>Sign in</h2>
+          <form id="sign-in">
+            <input class="form-control" type="email" name="credentials[email]" placeholder="Email">
+            <input class="form-control" type="password" name="credentials[password]" placeholder="Password">
+              <button class="button btn-primary hide hide-ps"> submit </button>
+          </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<button class="signUp button btn btn default" id="hide-signUp" type="button" class="dropdown-item modal-launch" data-toggle="modal" data-target="#sign-up-modal">
+Sign up
+</button>
+
+      <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="signUp" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                        <h2>Sign up</h2>
+                        <form id="sign-up">
+                          <input class="form-control" type="email" name="credentials[email]" placeholder="Email">
+                          <input class="form-control" type="password" name="credentials[password]" placeholder="Password">
+                          <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+
+                            <button class="button btn-primary hide hide-ps"> submit </button>
+                        </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+    <button id="guest-signIn" class="button btn primary">Demo Login</button>
+
+  </div>
+
+<nav class="nav hidden">
+
+
+  <div class="d-flex justify-content-end">
+    <div id="auth-menu" class="dropdown hidden">
+      <button class="btn dropdown-toggle menu" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+         <!-- Button trigger modal -->
+         <button id="hide-password" type="button" class="dropdown-item modal-launch" data-toggle="modal" data-target="#change-password-modal">
+             Change Password
+        </button>
+       <button class="btn-primary dropdown-item" id="sign-out">Sign Out</button>
+    </div>
+   </div>
+ </div>
+
+ <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="changePassword" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="changePassword">Change Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="change-password">
+                    <input class="form-control mb-1" type="password" name="passwords[old]" placeholder="Old Password">
+                    <input class="form-control mb-1" type="password" name="passwords[new]" placeholder="New Password">
+                    <button class="btn btn-primary">Change Password</button>
+                </form>
+              </div>
+            <div class="modal-footer"> <p id="changePasswordFeedback"> </p></div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+        <!-- Button trigger modal -->
+        <button id="add-recipe" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addRecipeModal">
+          Add recipes
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="addRecipeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New Recipe</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="add-recipe">
+                <form id="add-recipe">
+                  <input class="form-control" type="text" name="recipe[name]" placeholder="recipe name">
+                  <input class="form-control" type="text" name="recipe[meal]" placeholder="meal">
+                  <input class="form-control" type="text" name="recipe[cooking_time]" placeholder="cooking_time">
+                  <input class="form-control" type="text" name="recipe[ingredients]" placeholder="ingredients">
+                  <button class="button btn-primary hide hide-ps"> Add! </button>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <div id="filters" class="button-group dropdown">
+      <button class="button is-checked dropbtn view-recipes" data-filter="*" style="display: none"> Filter </button>
+      <div class="dropdown-content">
+        <button data-filter="*"> All </button>
+        <button  data-filter=".Breakfast">Breakfast</button>
+        <button  data-filter=".Dinner">Dinner</button>
+        <button  data-filter=".Vegetarian">Vegetarian</button>
+        <button  data-filter=".Dessert">Dessert</button>
+      </div>
+    </div>
+
+        <div id="filter" class="button-group dropdown">
+          <button class="button is-checked dropbtn view-recipes" data-filter="*" style="display: none"> Filter by Ingredient </button>
+          <div class="dropdown-content">
+            <button data-filter="*"> All </button>
+            <button  data-filter=".eggs">Eggs</button>
+            <button  data-filter=".garlic">Garlic</button>
+            <button  data-filter=".butter">Butter</button>
+            <button  data-filter=".milk">Milk</button>
+          </div>
+        </div>
+
+
+  <button id="getRecipesButton" class="btn btn-info mr-2 hidden" style="display: none"> Get Recipes</button>
+
+
+
+</nav>
+
+  <div id="message"> </div>
+  <div id="getMessage"></div>
+
+<!-- so what's going on here is that I tried to make the tab the clickable button for the data filter and I commented out the 'breakfast' data filter button up there ^ so to fix this you could delete the tab thing and un comment out the breakfast button. oh and I told the stuff to render to tab-content not content   -->
+
+
+<div class="flex-container content grid" id="content"> </div>
+
+
+
+</body>
+
+</html>
