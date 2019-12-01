@@ -20,6 +20,7 @@ $(() => {
   $('#sign-up').on('submit', events.onSignUp)
   $('#sign-in').on('submit', events.onSignIn)
   $('#sign-out').on('click', events.onSignOut)
+  $('#guest-signIn').on('click', events.onGuest)
   $('#change-password').on('submit', events.onChangePassword)
   $('.add-recipe').on('submit', events.onAddRecipe)
   // $('#add-tag').on('submit', events.onAddTag)

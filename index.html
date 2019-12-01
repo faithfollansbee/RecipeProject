@@ -25,21 +25,60 @@
 </head>
 
 <body>
+<div class="landing">
 <h1>Recipe Book</h1>
-  <div class="landing">
-    <div id="landing-message"></div>
-    <form id="sign-in" class="p-2">
-      <input class="form-control mb-1" type="email" name="credentials[email]" placeholder="Email">
-      <input class="form-control mb-1" type="password" name="credentials[password]" placeholder="Password">
-      <button class="button btn">Sign in</button>
-    </form>
 
-    <form id="sign-up" class="p-2">
-      <input class="form-control mb-1" type="email" name="credentials[email]" placeholder="Email">
-      <input class="form-control mb-1" type="password" name="credentials[password]" placeholder="Password">
-      <input class="form-control mb-1" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-      <button class="button btn">Sign up</button>
-    </form>
+<button class="signIn button btn btn primary" id="hide-sign-in" type="button" class="dropdown-item modal-launch" data-toggle="modal" data-target="#sign-in-modal">
+Sign in
+</button>
+
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="signIn" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+          <h2>Sign in</h2>
+          <form id="sign-in">
+            <input class="form-control" type="email" name="credentials[email]" placeholder="Email">
+            <input class="form-control" type="password" name="credentials[password]" placeholder="Password">
+              <button class="button btn-primary hide hide-ps"> submit </button>
+          </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<button class="signUp button btn btn default" id="hide-signUp" type="button" class="dropdown-item modal-launch" data-toggle="modal" data-target="#sign-up-modal">
+Sign up
+</button>
+
+      <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="signUp" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                        <h2>Sign up</h2>
+                        <form id="sign-up">
+                          <input class="form-control" type="email" name="credentials[email]" placeholder="Email">
+                          <input class="form-control" type="password" name="credentials[password]" placeholder="Password">
+                          <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+
+                            <button class="button btn-primary hide hide-ps"> submit </button>
+                        </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+    <button id="guest-signIn" class="button btn primary">Demo Login</button>
+
   </div>
 
 <nav class="nav hidden">

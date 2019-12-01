@@ -2,6 +2,20 @@ const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 
+// const onGuest = event => {
+//   event.preventDefault()
+//   const guestInfo = {
+//     'credentials': {
+//       'email': 'demo@demo',
+//       'password': 'demo'
+//     }
+//   }
+//   api.signIn(guestInfo)
+//     .then(ui.signInSuccessful)
+//     .catch(ui.signInFailure)
+//   $('#change-password').hide()
+// }
+
 const onSignUp = event => {
   event.preventDefault()
   const form = event.target//

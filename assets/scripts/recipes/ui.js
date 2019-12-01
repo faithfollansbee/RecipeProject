@@ -100,6 +100,7 @@ const signInSuccessful = responseData => {
   store.user = responseData.user
   $('.nav').show()
   $('.landing').hide()
+  $('#guest-signIn').hide()
   $('#hide-password').show()
   $('.add-recipe').show()
   $('#add-recipe').show()
@@ -127,6 +128,7 @@ const signOutSuccessful = responseData => {
   $('.change-password').hide()
   $('.sign-up').show()
   $('.nav').hide()
+  $('#guest-signIn').show()
   $('.landing').show()
   $('.sign-out').hide()
   $('.view-recipes').hide()
